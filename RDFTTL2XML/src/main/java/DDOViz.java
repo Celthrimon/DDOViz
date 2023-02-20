@@ -15,7 +15,7 @@ public class DDOViz {
         Model model = RDFDataMgr.loadModel("example.ttl");
         FileOutputStream out = new FileOutputStream("running.rdf");
         RDFDataMgr.write(out, model, RDFFormat.RDFXML_PLAIN);
-        String query = Files.readString(Paths.get("test.xq"));
+        String query = Files.readString(Paths.get("ddoviz.xq"));
         String result = new XQuery(query).execute(context);
         out = new FileOutputStream("output.xml");
         out.write(result.getBytes());
